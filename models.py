@@ -7,7 +7,6 @@ from sklearn.model_selection import KFold
 from sklearn.svm import LinearSVC
 from sklearn.metrics import classification_report
 
-
 train_file = 'data/twitter-2013train-A.txt'
 test_file = 'data/twitter-2013test-A.txt'
 
@@ -24,7 +23,7 @@ def fit_score_model(features_train, features_test, df_train, df_test):
 	clf.fit(features_train, df_train["label"])
 	preds = clf.predict(features_test)
 
-	return classification_report(df_test["label"], preds)
+	return classification_report(df_test["label"], preds, digits=3)
 
 
 df_train = load_data(train_file)

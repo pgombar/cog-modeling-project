@@ -7,4 +7,4 @@ for kernel in ['spectrum', 'subsequence', 'distance']:
 	gold = np.asarray(pd.read_csv('data/twitter-2013test-A.txt-harry', sep='\t', header=-1)[0])
 
 	print "Kernel: {0}".format(kernel)
-	print classification_report(gold, pred) + "\n"
+	print classification_report(gold, pred, digits=3) + "\n"
